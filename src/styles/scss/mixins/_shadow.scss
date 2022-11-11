@@ -1,0 +1,19 @@
+@mixin neo(
+  $distance: 10px,
+  $color1: #000,
+  $color2: rgb(40, 40, 40),
+  $blur: $distance * 2
+  ) {
+  box-shadow: $distance $distance $blur $color1,
+              (-$distance) (-$distance) $blur $color2;
+}
+
+@mixin innerNeo(
+  $distance: 10px,
+  $color1: #000,
+  $color2: rgb(40, 40, 40),
+  $blur: $distance * 2
+  ) {
+  box-shadow: inset $distance $distance $blur $color1,
+              inset (-$distance) (-$distance) $blur $color2;
+}

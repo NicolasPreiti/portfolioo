@@ -1,0 +1,42 @@
+@import url(./reset.css);
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #141414;
+  background: radial-gradient(circle at 0% 0%, #00ffd9 0%, #141414 20%);
+}
+
+:target {
+  scroll-margin-top: 8rem;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .container {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 60%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

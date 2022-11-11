@@ -1,0 +1,51 @@
+@use "../../styles/scss/fonts";
+@use "../../styles/scss/colors";
+@use "../../styles/scss/breakpoints";
+@import "../../styles/scss/mixins/shadow";
+@import "../../styles/scss/mixins/gradient";
+
+$project-min-width: 200px;
+
+.projects {
+  margin-top: 8rem;
+  padding-bottom: 8rem;
+  
+  &__title {
+    font-family: fonts.$primary;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($project-min-width, 1fr));
+    gap: 1rem;
+    perspective: 2000px;
+  }
+}
+
+
+@media screen and (breakpoints.$mobile) {
+  $project-min-width: 260px;
+
+  .projects {
+
+    &__container {
+      grid-template-columns: repeat(auto-fit, minmax($project-min-width, 1fr));
+    }
+  }
+}
+
+@media screen and (breakpoints.$tablet) {
+  $project-min-width: 360px;
+
+  .projects {
+
+    &__container {
+      grid-template-columns: repeat(auto-fit, minmax($project-min-width, 1fr));
+    }
+  }
+}

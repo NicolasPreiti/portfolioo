@@ -1,0 +1,48 @@
+@use "./breakpoints";
+@use "./colors";
+@import "./mixins/gradient";
+@import url(./reset.css);
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: colors.$dark-background;
+  @include gradient(colors.$primary, colors.$dark-background)
+}
+
+:target {
+  scroll-margin-top: 8rem;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+@media screen and (breakpoints.$mobile) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (breakpoints.$tablet) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (breakpoints.$desktopsm) {
+  .container {
+    width: 70%;
+  }
+}
+
+
+@media screen and (breakpoints.$desktop) {
+  .container {
+    width: 60%;
+  }
+}

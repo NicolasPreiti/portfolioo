@@ -1,0 +1,117 @@
+@use "../../styles/scss/fonts";
+@use "../../styles/scss/colors";
+@use "../../styles/scss/breakpoints";
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100vh;
+  perspective: 1000px;
+
+  &__picture {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    display: block;
+    height: 550px;
+    max-width: 150px;
+    background: colors.$alpha-primary;
+    box-shadow: inset 0 0 30px colors.$dark-background,
+      10px 10px 20px #000;
+    transition: filter .2s;
+    overflow: hidden;
+
+    &:hover {
+      filter: blur(.1rem);
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    // mix-blend-mode: multiply;
+  }
+}
+
+.presentation {
+  position: relative;
+  z-index: 5;
+  font-size: .72rem;
+  width: 100%;
+  transform: rotateX(-5deg) rotateY(5deg);
+
+  &__hi {
+    font-family: fonts.$primary;
+    font-size: 4em;
+    color: #fff;
+  }
+
+  &__name {
+    font-family: fonts.$primary;
+    font-size: 7em;
+    color: #fff;
+    animation: toRight .6s;
+  }
+
+  &__position {
+    font-family: fonts.$primary;
+    font-size: 4em;
+    color: transparent;
+    background-image: radial-gradient(circle at 0 0, colors.$primary, colors.$dark-background 30%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 400%;
+    animation: shine 3s ease-out;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem);
+  }
+
+  50% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@media screen and (breakpoints.$tabletsm) {
+  .header {
+    &__picture {
+      max-width: 150px;
+    }
+  }
+
+  .presentation {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (breakpoints.$tablet) {
+  .header {
+    &__picture {
+      position: relative;
+      max-width: 350px;
+    }
+  }
+}

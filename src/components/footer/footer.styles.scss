@@ -1,0 +1,55 @@
+@use "../../styles/scss/colors";
+@use "../../styles/scss/fonts";
+@use "../../styles/scss/breakpoints";
+@import "../../styles/scss/mixins/shadow";
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 6rem 0;
+  background-color: #101010;
+  @include neo(10px, #000, #101010, 30px );
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__social {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    gap: .6rem;
+
+    & a {
+      color: #fff;
+      transition: transform .2s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__creator {
+    font-family: fonts.$primary;
+    color: #fff;
+    display: none;
+  }
+}
+
+@media screen and (breakpoints.$tablet) {
+  .footer {
+
+    &__container {
+      justify-content: space-evenly;
+    }
+
+    &__creator {
+      display: block;
+    }
+  }
+}

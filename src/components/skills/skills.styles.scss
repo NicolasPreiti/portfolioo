@@ -1,0 +1,45 @@
+@use "../../styles/scss/breakpoints";
+@use "../../styles/scss/colors";
+@use "../../styles/scss/fonts";
+@import "../../styles/scss/mixins/gradient";
+@import "../../styles/scss/mixins/shadow";
+
+$skill-min-width: 90px;
+
+.skills {
+
+  &__title {
+    font-family: fonts.$primary;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax($skill-min-width, 1fr));
+    gap: .8rem;
+    perspective: 1000px;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0) translateY(5rem);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  65% {
+    transform: scale(.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,72 @@
+@use "../../styles/scss/breakpoints";
+@use "../../styles/scss/colors";
+@use "../../styles/scss/fonts";
+@import "../../styles/scss/mixins/gradient";
+@import "../../styles/scss/mixins/shadow";
+
+$skill-min-width: 90px;
+
+.skill {
+  position: relative;
+  width: 100%;
+  min-width: $skill-min-width;
+  max-width: 100px;
+  padding: 1.2rem;
+  border-radius: .4rem;
+  background-color: colors.$dark-background;
+  @include gradient(colors.$dark-background, colors.$primary, 30%, 100%);
+  background-size: 400%;
+  @include neo(10px, #000, rgb(30, 30, 30));
+  transition: transform .5s ease-in, background .3s ease-out, box-shadow .3s ease-out;
+  animation: bounce 1.5s;
+
+  &__icon {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    transition: opacity .3s ease-out;
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__name {
+    user-select: none;
+    opacity: 0;
+    font-family: fonts.$primary;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: #fff;
+    transition: opacity .3s ease-in;
+  }
+
+  &__click {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+  }
+
+  &:hover &__icon {
+    opacity: 0;
+  }
+
+  &:hover &__name {
+    opacity: 1;
+  }
+
+  &:hover {
+    background-position: 60%;
+    @include neo(5px,  colors.$primary, colors.$dark-background, 20px);
+    transform: rotateX(20deg)
+  }
+}

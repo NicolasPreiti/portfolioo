@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["scss/index.scss","scss/_colors.scss","scss/mixins/_gradient.scss"],"names":[],"mappings":"AAGQ;AAER;EACE;;;AAGF;EACE;EACA,kBCXgB;ECChB;;;AFcF;EACE;;;AAGF;EACE;EACA;;;AAGF;EACE;IACE;;;AAIJ;EACE;IACE;;;AAIJ;EACE;IACE;;;AAKJ;EACE;IACE","file":"index.css"}

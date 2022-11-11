@@ -1,0 +1,87 @@
+@use "../../styles/scss/colors";
+@use "../../styles/scss/fonts";
+@use "../../styles/scss/breakpoints";
+
+.nav {
+  position: fixed;
+  z-index: 500;
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 2rem;
+  background-color: colors.$dark-background + dd;
+  background: linear-gradient(130deg, colors.$primary, colors.$dark-background + aa 20%);
+  backdrop-filter: blur(.5rem);
+  -webkit-backdrop-filter: blur(.5rem);
+  box-shadow: 10px 10px 30px rgb(15, 15, 15),
+    -10px -10px 30px rgb(50, 50, 50);
+  animation: opacity 1s;
+
+  &--fixed {
+    position: fixed;
+    width: max-content;
+  }
+
+  &__ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 1.6rem;
+    width: max-content;
+    padding: 1.5rem 3rem;
+
+  }
+
+  &__li {
+    cursor: pointer;
+    font-family: fonts.$primary;
+    font-size: .9rem;
+    text-transform: capitalize;
+    white-space: nowrap;
+    color: #fff;
+    position: relative;
+    transition: color .2s ease;
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &:hover {
+      color: colors.$primary;
+    }
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (breakpoints.$base) {
+  .nav {
+    display: none;
+  }
+}
+
+@media screen and (breakpoints.$tabletsm) {
+  .nav {
+    display: block;
+  }
+}
+
+@media screen and (breakpoints.$tablet) {
+  .nav {
+
+    &__li {
+      font-size: 1rem;
+    }
+  }
+}
